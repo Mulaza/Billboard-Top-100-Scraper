@@ -1,10 +1,7 @@
 # ------------------------------------------------------------------------------------------------------------------
 # NOTE: This only works under the assumption that the accessed web page does not change its layout and class naming
 # ------------------------------------------------------------------------------------------------------------------
-# TODO:  add a README.md
-# TODO: save to json dictionaries
-# TODO: add a loading bar
-# TODO: do the same mess for the anime movie list
+
 
 # Need to be installed with pip
 from bs4 import BeautifulSoup
