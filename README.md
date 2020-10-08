@@ -3,9 +3,9 @@
 
 ## Depencencies 
 
-* [BeautifulSoup]()
-* [requests]()
-* [progress]()
+* [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
+* [requests](https://pypi.org/project/requests/)
+* [progress](https://pypi.org/project/progress/)
 
 ## About 
 This is a simple web-scraping script that scrapes the Billboard Top 100 charts
