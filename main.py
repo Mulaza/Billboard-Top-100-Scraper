@@ -1,10 +1,18 @@
 # ------------------------------------------------------------------------------------------------------------------
 # NOTE: This only works under the assumption that the accessed web page does not change its layout and class naming
 # ------------------------------------------------------------------------------------------------------------------
+# TODO:  add a README.md
+# TODO: save to json dictionaries
+# TODO: add a loading bar
+# TODO: do the same mess for the anime movie list
 
 # Need to be installed with pip
 from bs4 import BeautifulSoup
 import requests
+from progress.bar import IncrementalBar
+import time
+import json
+import sys
 
 # ------------------------------------------------------------------------------------------------------------------
 
@@ -18,24 +26,37 @@ soup = BeautifulSoup(req.text, "html.parser")
 # look fot only the 'li' tags with the class of 'chart-list__element'
 tags = soup.findAll("li", class_="chart-list__element")
 
+bar = IncrementalBar('Collecting...', max = len(tags))
 
-# create an empty string to hold the movie names
-listString = ""
+
+outList = []
+
+
+# package up needed the needed data in each lst item into a dictionary
+def extract(li):
+    return {
+        "rank": li.find_all('span', class_="chart-element__rank__number")[0].text,
+        "title": li.find_all('span', class_="chart-element__information__song")[0].text,
+        "artist": li.find_all('span', class_="chart-element__information__artist")[0].text
+    }
 
 
 # loop through the li tags to get a list of a tags and get the text within them
-for li in tags:
-    print(li.find_all('span', class_="chart-element__rank__number")[0].text)         # Song Rank
+for i in tags:
 
-    print(li.find_all('span', class_="chart-element__information__song")[0].text)    # Song Title
+    # Add each dictionary to a list
+    outList.append(extract(i))
 
-    print(li.find_all('span', class_="chart-element__information__artist")[0].text)  # Song artists
+    # Increment the bar and pause a little
+    bar.next()
+    time.sleep(0.01)
+
+bar.finish()
 
 
+# write the outList to a .json file
+with open("Billboard-Hot-100.json", 'w') as fileObject:
+    json.dump(outList, fileObject)
 
-#     listString = listString + "{} \n".format(a.find_all('a')[0].text)
-#
-#
-# # create a file to add and hold all of the movie names
-# with open("Anime-Movie-list.txt", 'a') as fileObject:
-#     fileObject.write(listString)
+
+sys.stdout.write("Output to Billboard-Hot-100.json")
