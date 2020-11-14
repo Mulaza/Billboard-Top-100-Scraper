@@ -13,7 +13,7 @@ for the top 100 songs, artist outputs the results to a .json file
 
 ## Output
 
-```json
+```text
 
 [
  {
