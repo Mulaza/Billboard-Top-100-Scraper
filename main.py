@@ -32,7 +32,7 @@ outList = []
 # package up needed the needed data in each lst item into a dictionary
 def extract(li):
     return {
-        "rank": li.find_all('span', class_="chart-element__rank__number")[0].text,
+        "rank": int(li.find_all('span', class_="chart-element__rank__number")[0].text),
         "title": li.find_all('span', class_="chart-element__information__song")[0].text,
         "artist": li.find_all('span', class_="chart-element__information__artist")[0].text
     }
