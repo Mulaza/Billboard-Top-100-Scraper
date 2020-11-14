@@ -15,12 +15,37 @@ for the top 100 songs, artist outputs the results to a .json file
 
 ```json
 
-{
+[
+ {
+ "rank": "1",
+ "title": "Mood",
+ "artist": "24kGoldn Featuring iann dior"
+ },
+ {
+ "rank": "2",
+ "title": "Positions",
+ "artist": "Ariana Grande"
+ },
+ {
+ "rank": "3",
+ "title": "Laugh Now Cry Later",
+ "artist": "Drake Featuring Lil Durk"
+ },
+ {
+ "rank": "4",
+ "title": "Blinding Lights",
+ "artist": "The Weeknd"
+ },
 
-"rank": "11",
-"title": "Holy",
-"artist": "Justin Bieber Featuring Chance The Rapper"
+ .....
 
-}
+ {
+ "rank": "100",
+ "title": "Take You Dancing",
+ "artist": "Jason Derulo"
+ }
+]
+
 
 ```
+
