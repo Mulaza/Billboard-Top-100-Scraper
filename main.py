@@ -19,7 +19,7 @@ req = requests.get(url)
 soup = BeautifulSoup(req.text, "html.parser")
 
 
-#-===========================================================
+# ===========================================================
 # look fot only the 'li' tags with the class of 'chart-list__element'
 tags = soup.findAll("li", class_="chart-list__element")
 

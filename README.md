@@ -9,4 +9,19 @@
 
 ## About 
 This is a simple web-scraping script that scrapes the Billboard Top 100 charts
-for the top 100 songs, artist outputs the results to a .json file 
+for the top 100 songs, artist outputs the results to a .json file. 
+
+## Output
+
+```json
+
+{
+
+"rank": "11",
+"title": "Holy",
+"artist": "Justin Bieber Featuring Chance The Rapper"
+
+}
+
+```
+
