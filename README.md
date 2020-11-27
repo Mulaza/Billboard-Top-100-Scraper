@@ -1,4 +1,4 @@
-# Billboard-Top-100 Scraper
+# Billboard-Top-100 Scraper 🎶
 
 
 ## Depencencies 
